@@ -87,7 +87,6 @@ function r_node {
 
 # Variables
 SERVER_IP=""
-USERNAME=""
 PORT=""
 FUNCTION=""
 
