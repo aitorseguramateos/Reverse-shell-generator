@@ -15,3 +15,28 @@ Instalación de la herramienta:
 ------------------------------
 
 1. Primero clonaremos la herramienta.
+```
+git clone https://github.com/aitorseguramateos/Reverse-shell-generator.git
+```
+
+2. Nos ubicaremos en el directorio del repositorio.
+```
+cd Reverse-shell-generator
+```
+
+3. Seguidamente le daremos permisos de ejecución.
+```
+chmod +x reversgenerator.sh
+```
+
+¿Cómo usar la herramienta?
+
+Para ver el menú de ayuda:
+```
+sudo ./reversgenerator.sh -h
+```
+
+Uso:
+```
+sudo ./reversgenerator.sh -s <IP_ATACANTE> [-p <PUERTO>] -f <FUNCION>
+```
