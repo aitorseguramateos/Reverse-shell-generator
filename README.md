@@ -30,7 +30,6 @@ chmod +x reversgenerator.sh
 ```
 
 ¿Cómo usar la herramienta?
-‐-----------------------------------------------------------
 
 Para ver el menú de ayuda:
 ```
