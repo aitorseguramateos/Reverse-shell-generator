@@ -10,7 +10,7 @@ Esta es una herramienta programada en bash, con la finalidad de automatizar la c
   <li>Reverse shell de Ruby</li>
   <li>Reverse shell de Node</li>
 </ul>
-
+ 
 Instalación de la herramienta:
 ------------------------------
 
